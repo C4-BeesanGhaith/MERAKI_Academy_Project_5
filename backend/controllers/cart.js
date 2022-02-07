@@ -58,8 +58,37 @@ const getAllOrder = (req, res) => {
     });
   });
 };
+
+// update cart by id for user
+const updateCartById = (req, res) => {
+  const id = req.params.id;
+  const product_id = req.params.product_id;
+  const { quantity } = req.body;
+
+  const query = `UPDATE cart SET quantity=? WHERE product_id=? AND user_id=?`;
+
+  const data = [quantity, product_id, id];
+
+  connection.query(query, data, (err, result) => {
+    if (err) {
+      console.log(quantity, id, product_id);
+      res.status(500).json({
+        success: false,
+        message: "Server error",
+      });
+    }
+    res.status(202).json({
+      success: true,
+      message: "update cart",
+      result: result,
+      data: data
+    });
+  });
+};
+
 module.exports = {
   createCart,
   getAllCartOfUser,
   getAllOrder,
+  updateCartById,
 };
