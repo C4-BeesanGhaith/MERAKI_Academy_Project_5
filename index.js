@@ -3,24 +3,24 @@ const cors = require("cors");
 require("dotenv").config();
 const path = require("path");
 const app = express();
-if(process.env.NODE_ENV === 'production'){
+
   app.use(express.static('frontend/build'));
-}
-app.get('*',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-});
-const db = require("./database/db");
 
-const usersRouter = require("./routes/users"); //import users router
-const loginRouter = require("./routes/login"); //import login router
-const roleRouter = require("./routes/role"); //import role router
-const productRouter = require("./routes/products"); //import products router
-
-const permissionRouter = require("./routes/permission"); //import permission router
-const cartRouter = require("./routes/cart"); //import cart router
-app.use(cors());
-
-app.use(express.json());
+  const db = require("./database/db");
+  
+  const usersRouter = require("./routes/users"); //import users router
+  const loginRouter = require("./routes/login"); //import login router
+  const roleRouter = require("./routes/role"); //import role router
+  const productRouter = require("./routes/products"); //import products router
+  
+  const permissionRouter = require("./routes/permission"); //import permission router
+  const cartRouter = require("./routes/cart"); //import cart router
+  app.use(cors());
+  
+  app.use(express.json());
+  app.get('*',(req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
 //========================================
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
