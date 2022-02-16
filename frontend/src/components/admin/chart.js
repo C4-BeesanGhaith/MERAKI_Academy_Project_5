@@ -12,7 +12,7 @@ import {
   Bar,
 } from "recharts";
 import React, { useState, useEffect } from "react";
-import {MdDashboard} from "react-icons/md"
+import { MdDashboard } from "react-icons/md";
 import "../admin/admin.css";
 import axios from "axios";
 // import "../../../node_modules/react-vis/dist/style.css";
@@ -56,7 +56,7 @@ const Chart = () => {
   console.log(data1);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products/group")
+      .get("/products/group")
       .then(async (res) => {
         console.log(res.data);
         const cat = await res.data.result.map((elem, i) => ({
@@ -73,7 +73,7 @@ const Chart = () => {
       });
 
     axios
-      .get("http://localhost:5000/orders/search/cart")
+      .get("/orders/search/cart")
       .then(async (res) => {
         console.log(res.data.result);
 
@@ -94,7 +94,7 @@ const Chart = () => {
     <div>
       <div className="divChartPage">
         <div className="ChartPage">
-        <MdDashboard className="dash" />
+          <MdDashboard className="dash" />
           <h1>Dashboard Page</h1>
         </div>
       </div>

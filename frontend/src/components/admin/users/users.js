@@ -15,7 +15,7 @@ const Users = () => {
 
   const getAllUsers = () => {
     axios
-      .get("http://localhost:5000/users/")
+      .get("/users/")
       .then((res) => {
         setUsers(res.data.results);
       })
@@ -30,7 +30,7 @@ const Users = () => {
   //delete user
   const handleDeleteUser = (id) => {
     axios
-      .delete(`http://localhost:5000/users/${id}`)
+      .delete(`/users/${id}`)
       .then((result) => {
         getAllUsers();
       })
@@ -42,7 +42,7 @@ const Users = () => {
   const handleUpdateUser = (id) => {
     axios
       .put(
-        `http://localhost:5000/users/role/${id}`,
+        `/users/role/${id}`,
         role_id === 1 ? { role_id: 2 } : { role_id: 1 }
       )
       .then((res) => {

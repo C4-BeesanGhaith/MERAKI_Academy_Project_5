@@ -19,7 +19,7 @@ const Products = () => {
 
   const getAllProducts = () => {
     axios
-      .get("http://localhost:5000/products/")
+      .get("/products/")
       .then((res) => {
         setProducts(res.data.result);
       })
@@ -34,7 +34,7 @@ const Products = () => {
 
   const deleteProductById = (id) => {
     axios
-      .delete(`http://localhost:5000/products/${id}`)
+      .delete(`/products/${id}`)
       .then((res) => {
         getAllProducts();
       })
@@ -45,7 +45,7 @@ const Products = () => {
 
   const updateProductById = (id) => {
     axios
-      .patch(`http://localhost:5000/products/${id}`, {
+      .patch(`/products/${id}`, {
         image,
         nameProduct,
         description,

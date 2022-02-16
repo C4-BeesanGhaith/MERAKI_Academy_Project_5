@@ -8,7 +8,7 @@ function FsvList({userInfo}) {
 
   const getFav = () => {
     axios
-      .get(`http://localhost:5000/orders/FavortList/${userInfo.userId}`)
+      .get(`/orders/FavortList/${userInfo.userId}`)
       .then((res) => {
         setFav(res.data.result);
         console.log(res.data.result);
@@ -39,7 +39,7 @@ function FsvList({userInfo}) {
                   onClick={() => {
                     axios
                       .delete(
-                        `http://localhost:5000/orders/deleteFavortList/${wish.id}`
+                        `/orders/deleteFavortList/${wish.id}`
                       )
                       .then((res) => {
                         getFav();
