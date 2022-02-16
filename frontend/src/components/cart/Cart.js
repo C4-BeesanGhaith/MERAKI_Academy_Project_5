@@ -29,7 +29,7 @@ const Cart = ({ userInfo }) => {
 
   const getALlUserOrder = () => {
     axios
-      .get(`http://localhost:5000/orders/${userInfo.userId}`)
+      .get(`/orders/${userInfo.userId}`)
       .then((res) => {
         setOrder(res.data.result);
       })
@@ -40,7 +40,7 @@ const Cart = ({ userInfo }) => {
 
   const deleteAllCartOfUser = () => {
     axios
-      .delete(`http://localhost:5000/orders/deleteCart/${userInfo.userId}`)
+      .delete(`/orders/deleteCart/${userInfo.userId}`)
       .then((res) => {
         getALlUserOrder();
       })
@@ -99,7 +99,7 @@ const Cart = ({ userInfo }) => {
                           onClick={() => {
                             axios
                               .put(
-                                `http://localhost:5000/orders/edit/${ord.id}`,
+                                `/orders/edit/${ord.id}`,
                                 {
                                   quantity: ord.quantity - 1,
                                   user_id: userInfo.userId,
@@ -120,7 +120,7 @@ const Cart = ({ userInfo }) => {
                           onClick={() => {
                             axios
                               .put(
-                                `http://localhost:5000/orders/edit/${ord.id}`,
+                                `/orders/edit/${ord.id}`,
                                 {
                                   quantity: ord.quantity + 1,
                                   user_id: userInfo.userId,
@@ -142,7 +142,7 @@ const Cart = ({ userInfo }) => {
                           onClick={() => {
                             axios
                               .delete(
-                                `http://localhost:5000/orders/delete/${userInfo.userId}/${ord.product_id}`
+                                `/orders/delete/${userInfo.userId}/${ord.product_id}`
                               )
                               .then((res) => {
                                 getALlUserOrder();

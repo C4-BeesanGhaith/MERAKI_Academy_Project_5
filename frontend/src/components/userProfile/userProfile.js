@@ -16,7 +16,7 @@ const UserProfile = ({ userInfo }) => {
   const [history, setHistory] = useState([]);
   const getAllHistoryCartOfUser = () => {
     axios
-      .get(`http://localhost:5000/orders/gethistory/${userInfo.userId}`)
+      .get(`/orders/gethistory/${userInfo.userId}`)
       .then((res) => {
         console.log(res.data.result);
         setHistory(res.data.result);

@@ -33,7 +33,7 @@ const Cloudinary = ({ setCloudinary }) => {
   //=====================================================
   const handleAddProduct = () => {
     axios
-      .post(`http://localhost:5000/products/`, {
+      .post(`/products/`, {
         image: url,
         nameProduct,
         description,

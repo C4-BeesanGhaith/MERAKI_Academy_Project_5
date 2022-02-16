@@ -5,7 +5,7 @@ function FsvList(wishlist, userInfo) {
   console.log(fav);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/orders/FavortList/${userInfo.userId}`)
+      .get(`/orders/FavortList/${userInfo.userId}`)
       .then((res) => {
         console.log(res.data.result);
         setFav(res.data.result);

@@ -29,7 +29,7 @@ const Register = () => {
   const addUserInfo = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post("http://localhost:5000/users", {
+      const result = await axios.post("/users", {
         firstName,
         lastName,
         country,

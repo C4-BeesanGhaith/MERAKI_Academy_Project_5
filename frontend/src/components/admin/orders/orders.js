@@ -7,7 +7,7 @@ const Orders = () => {
   const [orders, setOrdes] = useState();
   const getAllOrder = () => {
     axios
-      .get("http://localhost:5000/orders/search/cart")
+      .get("/orders/search/cart")
       .then((res) => {
         setOrdes(res.data.result);
       })

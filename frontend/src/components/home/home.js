@@ -38,7 +38,7 @@ const Home = ({ userInfo, setWishList }) => {
   useEffect(() => {
     const getAllProductsPage = () => {
       axios
-        .get(`http://localhost:5000/products/search?page=${page}`, {
+        .get(`/products/search?page=${page}`, {
           user_id: userInfo.userId,
         })
         .then((res) => {
@@ -54,7 +54,7 @@ const Home = ({ userInfo, setWishList }) => {
   useEffect(() => {
     const getAllProducts = () => {
       axios
-        .get("http://localhost:5000/products/")
+        .get("/products/")
         .then((res) => {
           setNumperOfProducts(res.data.result.length);
         })
@@ -69,7 +69,7 @@ const Home = ({ userInfo, setWishList }) => {
   useEffect(() => {
     const getAllProductsCategory = () => {
       axios
-        .get(`http://localhost:5000/products/search_2?type=${category}`)
+        .get(`/products/search_2?type=${category}`)
         .then((res) => {
           setProductsCategory(res.data.result);
         })
@@ -82,7 +82,7 @@ const Home = ({ userInfo, setWishList }) => {
 
   const getALlUserOrder = () => {
     axios
-      .get(`http://localhost:5000/orders/${userInfo.userId}`)
+      .get(`/orders/${userInfo.userId}`)
       .then((res) => {
         setCart(res.data.result);
       })
@@ -101,7 +101,7 @@ const Home = ({ userInfo, setWishList }) => {
     if (quantity > 0 && !checkCart().includes(product_id)) {
       axios
         .post(
-          "http://localhost:5000/orders/",
+          "/orders/",
           { quantity, product_id, user_id },
           {
             headers: {
@@ -119,7 +119,7 @@ const Home = ({ userInfo, setWishList }) => {
         cart.map((ord) => {
           if (ord.product_id === product_id) {
             axios
-              .put(`http://localhost:5000/orders/edit/${ord.id}`, {
+              .put(`/orders/edit/${ord.id}`, {
                 quantity: ord.quantity + quantity,
                 user_id,
               })
@@ -231,7 +231,7 @@ const Home = ({ userInfo, setWishList }) => {
                                 onClick={() => {
                                   axios
                                     .post(
-                                      "http://localhost:5000/orders/add_wishList",
+                                      "/orders/add_wishList",
                                       {
                                         product_id: product.id,
                                         user_id: userInfo.userId,
