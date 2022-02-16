@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef  } from "react";
-import{ init,send,sendForm } from '@emailjs/browser';
-import emailjs from '@emailjs/browser';
+import React, { useEffect, useState, useRef } from "react";
+import { init, send, sendForm } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import "./heroStyle.css";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineSend } from "react-icons/ai";
@@ -23,9 +23,8 @@ export default function HeroPage() {
   const form = useRef();
   const delay = 7000;
   const [index, setIndex] = useState(0);
-const [subject, setSubject] = useState("");
+  const [subject, setSubject] = useState("");
   const timeoutRef = React.useRef(null);
-
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -53,14 +52,22 @@ const [subject, setSubject] = useState("");
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_n5xq28c',"template_jhbrfkq",form.current, 'user_qrOrUTiYc5bmnaG9rsqfh')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_n5xq28c",
+        "template_jhbrfkq",
+        form.current,
+        "user_qrOrUTiYc5bmnaG9rsqfh"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
+        }
+      );
   };
-
 
   //=================================================
 
@@ -139,9 +146,9 @@ const [subject, setSubject] = useState("");
                 <HiOutlineMailOpen className="emailIcon" />
                 <p className="about-info">abdallahz.almomani@gmail.com</p>
               </div>
-              <br/>
             </div>
             <div className="contact">
+              <br />
               <a href="https://github.com/AbdullahMomani" target="_blank">
                 <button className="btnContact">Contact Us</button>
               </a>
@@ -162,6 +169,7 @@ const [subject, setSubject] = useState("");
               </div>
             </div>
             <div className="contact">
+              <br />
               <a href="https://github.com/Rubaalnadi" target="_blank">
                 <button className="btnContact">Contact Us</button>
               </a>
@@ -178,6 +186,7 @@ const [subject, setSubject] = useState("");
               <p className="about-info">beesan.ghaith@gmail.com</p>
             </div>
             <div className="contact">
+              <br />
               <a href="https://github.com/BeesanGhaith" target="_blank">
                 <button className="btnContact">Contact Us</button>
               </a>
@@ -192,23 +201,22 @@ const [subject, setSubject] = useState("");
         <div className="foot-content" key={"foot-content"}>
           <div className="foot-info" key={"foot-info"}>
             <h1> Jebnalak</h1>
-            <br/>
+            <br />
             <h4>
               it is a small market selling some products that people need such
               as eggs , meat , chicken ,vegtables and fruits
             </h4>
-            <br/>
+            <br />
           </div>
           <div className="hero-email" key={"hero-email"}>
             {/* <input className="inputEmail" type="text" placeholder="Type Your Email .." onClick={(e)=>{setSubject(e.target.value)}} />
             <AiOutlineSend className="hero-send" onClick={sendEmail}/> */}
-             <form ref={form} onSubmit={sendEmail}>
-      
-     
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send" />
-    </form>
+            <form ref={form} onSubmit={sendEmail}>
+              <label className="message">Message:</label>
+              <br/>
+              <textarea name="message" className="textMessage" />
+              <input type="submit" value="Send" />
+            </form>
           </div>
         </div>
         <div className="foot-end" key={"foot-end"}>
