@@ -42,7 +42,7 @@ const Navigation = ({ userInfo }) => {
               </div>
               <Link
                 className="Link"
-                to={userInfo.role === 1 ? "/home" : "/admin"}
+                to={userInfo.role === 1 ? "/home" :userInfo.role===2? "/admin":"/"}
               >
                 {userInfo.role === 1 ? (
                   <div className="divHomeNav">
