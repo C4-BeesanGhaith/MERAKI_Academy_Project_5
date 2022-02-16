@@ -4,7 +4,7 @@ require("dotenv").config();
 const path = require("path");
 const app = express();
 
-  app.use(express.static('frontend/build'));
+
 
   const db = require("./database/db");
   
@@ -18,9 +18,7 @@ const app = express();
   app.use(cors());
   
   app.use(express.json());
-  app.get('*',(req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-  });
+  
 //========================================
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
@@ -29,7 +27,12 @@ app.use("/products", productRouter);
 app.use("/permission", permissionRouter);
 app.use("/orders", cartRouter);
 //=========================================
-
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('frontend/build'));
+}
+app.get('*',(req, res) => {
+  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+});
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`SERVER WORKING ON PORT: ${PORT}`);
