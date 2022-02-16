@@ -67,7 +67,7 @@ const Cart = ({ userInfo }) => {
       <div className="divContainerCart">
         <div className="divCartPage">
           <div className="cartPage">
-            <FaOpencart className="cloud" />
+            <FaOpencart className="cartIcon" />
             <h1>My Cart</h1>
           </div>
         </div>
