@@ -23,7 +23,10 @@
         margin-top: 8%;
     }
     .proFav{
-        height: 34vh;
-        width: 62vw;
+        height: 70vh;
+        width: 30vw;
+    }
+    .favUser{
+        grid-template-columns: auto auto;
     }
 }

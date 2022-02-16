@@ -131,7 +131,7 @@ select::-ms-expand {
 }
 
 .productsContainer {
-  height: 50vh;
+  height: 60vh;
   width: 18vw;
   position: relative;
   box-shadow: 1px 1px 5px black;
@@ -144,7 +144,6 @@ select::-ms-expand {
   position: relative;
   box-shadow: 1px 1px 5px black;
   border-radius: 3%;
-  /* margin-top: 10ch; */
 }
 
 .productImg {
