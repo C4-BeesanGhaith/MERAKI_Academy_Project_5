@@ -4,8 +4,8 @@
   justify-content: center;
   margin-left: 3.2ch;
   margin-right: 3.2ch;
+  padding-bottom: 2ch;
   box-shadow: 0 0 10px silver;
-  margin-top: 5%;
 }
 
 .userPage {
@@ -13,7 +13,7 @@
   flex-direction: row;
   text-align: left;
   margin-left: 1ch;
-  margin-top: 2ch;
+  margin-top: 4ch;
   font-family: "Courier New", Courier, monospace;
   text-decoration: underline;
 }
@@ -22,7 +22,7 @@
   font-size: 5ch;
   margin-left: 2ch;
   margin-right: 0.5ch;
-  margin-top: 0.4ch;
+  margin-top: -0.4ch;
 }
 
 .underLineU {

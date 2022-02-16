@@ -109,6 +109,5 @@
 .btn:hover{
   cursor: pointer;
   color: black;
-  /* background-color: orange; */
   border: white;
 }

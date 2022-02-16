@@ -50,10 +50,7 @@ const Navigation = ({ userInfo }) => {
                     <p className="homeParaNav">Home</p>
                   </div>
                 ) : (
-                  <div className="divHomeNav">
-                    <MdDashboard className="dash" />{" "}
-                    <p className="homeParaNav">Dashboard</p>
-                  </div>
+                  <></>
                 )}
               </Link>
               <div className="divLogout">

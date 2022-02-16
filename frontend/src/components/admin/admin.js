@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import Chart from "./chart";
 import "../admin/admin.css";
-import { GrDashboard } from "react-icons/gr";
-import AdminNavigation from "./adminNavigation";
-import { CgProductHunt } from "react-icons/cg";
-import { FiUsers } from "react-icons/fi";
-import { IoCartSharp } from "react-icons/io5";
+import { GiCheckMark } from "react-icons/gi";
 import Users from "./users/users";
 import Orders from "./orders/orders";
 import Products from "./products/products";
-import { MdDashboard } from "react-icons/md";
+
+
+
 const Admin = () => {
   const [users, setUsers] = useState(false);
   const [orders, setOrders] = useState(false);
   const [products, setProducts] = useState(false);
   const [chart, setChart] = useState(false);
+  
   return (
     <div>
       <div className="adminPageContainer">
@@ -24,7 +23,7 @@ const Admin = () => {
               <div className="adminDashboard"></div>
               <div className="adminDashboard">
                 {" "}
-                <MdDashboard className="dash" />
+                <GiCheckMark className="check" />
                 <button
                   className="dashboardButton"
                   onClick={() => {
@@ -40,7 +39,7 @@ const Admin = () => {
               </div>
               <div className="adminDashboard">
                 {" "}
-                <CgProductHunt />
+                <GiCheckMark className="check"/>
                 <button
                   className="dashboardButton"
                   onClick={() => {
@@ -55,7 +54,7 @@ const Admin = () => {
               </div>
               <div className="adminDashboard">
                 {" "}
-                <FiUsers />
+                <GiCheckMark className="check"/>
                 <button
                   className="dashboardButton"
                   onClick={() => {
@@ -70,7 +69,7 @@ const Admin = () => {
               </div>
               <div className="adminDashboard">
                 {" "}
-                <IoCartSharp />
+                <GiCheckMark className="check"/>
                 <button
                   className="dashboardButton"
                   onClick={() => {

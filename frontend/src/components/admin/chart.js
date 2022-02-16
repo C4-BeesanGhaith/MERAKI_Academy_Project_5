@@ -12,6 +12,7 @@ import {
   Bar,
 } from "recharts";
 import React, { useState, useEffect } from "react";
+import {MdDashboard} from "react-icons/md"
 import "../admin/admin.css";
 import axios from "axios";
 // import "../../../node_modules/react-vis/dist/style.css";
@@ -88,33 +89,27 @@ const Chart = () => {
         console.log(er);
       });
   }, []);
+
   return (
-    <div className="chart">
-      <div></div>
-      <div>
-        <PieChart width={730} height={250}>
-          <Pie
-            data={data1}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            innerRadius={60}
-            outerRadius={80}
-            fill="orange"
-            label
-          />
-          <Tooltip />
-        </PieChart>
-        <BarChart width={730} height={250} data={data}>
-          <CartesianGrid strokeDasharray="1 1" />
-          <XAxis dataKey="name" scale={"point"} />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="value" fill="gray" />
-        </BarChart>
-        {/* <XYPlot
+    <div>
+      <div className="divChartPage">
+        <div className="ChartPage">
+        <MdDashboard className="dash" />
+          <h1>Dashboard Page</h1>
+        </div>
+      </div>
+      <div className="underLineChart"></div>
+      <div className="chart">
+        <div>
+          <BarChart width={500} height={300} data={data}>
+            <CartesianGrid strokeDasharray="1 1" />
+            <XAxis dataKey="name" scale={"point"} />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="value" fill="silver" />
+          </BarChart>
+          {/* <XYPlot
           xDomain={[timestamp - 2 * ONE_DAY, timestamp + 30 * ONE_DAY]}
           yDomain={[0.1, 2.1]}
           xType="time"
@@ -127,6 +122,23 @@ const Chart = () => {
           <YAxis />
           <VerticalRectSeries data={data1} style={{ stroke: "#fff" }} />
         </XYPlot> */}
+        </div>
+        <div>
+          <PieChart width={300} height={300}>
+            <Pie
+              data={data1}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={80}
+              fill="orange"
+              label
+            />
+            <Tooltip />
+          </PieChart>
+        </div>
       </div>
     </div>
   );
