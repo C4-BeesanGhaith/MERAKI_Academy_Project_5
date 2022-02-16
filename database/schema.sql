@@ -79,9 +79,9 @@ PRIMARY KEY (id)
 
 INSERT INTO roles (role) VALUES ("user");
 INSERT INTO roles (role) VALUES ("admin");
-INSERT INTO users (firstName,lasttName,country,email,password,role_id) VALUES ("abdullah","almomani","jordan","abdallahz.almomani@gmail.com","123",2);
-INSERT INTO users (firstName,lasttName,country,email,password,role_id) VALUES ("ruba","alnadi","rubaalnadi5@gmail.com","jordan","123",2);
-INSERT INTO users (firstName,lasttName,country,email,password,role_id) VALUES ("bessan","ghaith","beesan.ghaith@gmail.com","jordan","123",2);
+INSERT INTO users (firstName,lastName,country,email,password,role_id) VALUES ("abdullah","almomani","jordan","abdallahz.almomani@gmail.com","123",2);
+INSERT INTO users (firstName,lastName,country,email,password,role_id) VALUES ("ruba","alnadi","rubaalnadi5@gmail.com","jordan","123",2);
+INSERT INTO users (firstName,lastName,country,email,password,role_id) VALUES ("bessan","ghaith","beesan.ghaith@gmail.com","jordan","123",2);
 
 INSERT INTO products (image, nameProduct ,description, price ,type) VALUES (' https://i.pinimg.com/564x/3a/83/5d/3a835d8ef7008cf7c758d6c778dc7897.jpg', 'chips lays', 'lays flavor BBQ', 0.7 ,'snack');
 
