@@ -27,12 +27,12 @@ app.use("/products", productRouter);
 app.use("/permission", permissionRouter);
 app.use("/orders", cartRouter);
 //=========================================
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('frontend/build'));
-}
-app.get('*',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-});
+// if(process.env.NODE_ENV === 'production'){
+//   app.use(express.static('frontend/build'));
+// }
+// app.get('*',(req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+// });
 const PORT =process.env.PORT|| 5000;
 app.listen(PORT, () => {
   console.log(`SERVER WORKING ON PORT: ${PORT}`);
