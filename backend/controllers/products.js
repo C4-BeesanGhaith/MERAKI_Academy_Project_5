@@ -95,10 +95,10 @@ const getPageProducts = (req, res) => {
   // page number
   const page = req.query.page;
   const offset = (page - 1) * limit;
-  const query = "select * from Products limit " + limit + " OFFSET " + offset;
+  const query = "select * from products limit " + limit + " OFFSET " + offset;
 
   connection.query(query, (err, results) => {
-    if (err) {
+    if (err) {throw err
       res.status(500).json({
         success: false,
         message: "server error",
