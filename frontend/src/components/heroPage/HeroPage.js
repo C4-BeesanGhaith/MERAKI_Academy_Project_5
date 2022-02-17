@@ -61,6 +61,7 @@ export default function HeroPage() {
       )
       .then(
         (result) => {
+          setSubject("");
           console.log(result.text);
         },
         (error) => {
@@ -213,8 +214,15 @@ export default function HeroPage() {
             <AiOutlineSend className="hero-send" onClick={sendEmail}/> */}
             <form ref={form} onSubmit={sendEmail}>
               <label className="message">Message:</label>
-              <br/>
-              <textarea name="message" className="textMessage" />
+              <br />
+              <textarea
+                name="message"
+                className="textMessage"
+                value={subject}
+                onChange={(e) => {
+                  setSubject(e.target.value);
+                }}
+              />
               <input type="submit" value="Send" />
             </form>
           </div>
