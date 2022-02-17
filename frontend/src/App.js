@@ -9,9 +9,6 @@ import UserProfile from "./components/userProfile/userProfile";
 import Cart from "./components/cart/Cart";
 import HeroPage from "./components/heroPage/HeroPage";
 import Admin from "./components/admin/admin";
-import Users from "./components/admin/users/users.js";
-import Products from "./components/admin/products/products.js";
-import Orders from "./components/admin/orders/orders.js";
 
 import FsvList from "./components/fav-list/FsvList";
 import Chart from "./components/admin/chart";
