@@ -55,10 +55,10 @@ const Home = ({ userInfo, setWishList }) => {
     const getAllProducts = () => {
       axios
         .get("/products/")
-        .then((res) => {
+        .then((res) => {console.log(res.data);
           setNumperOfProducts(res.data.result.length);
         })
-        .catch((err) => {});
+        .catch((err) => {console.log(err);});
     };
     getAllProducts();
   }, []);
