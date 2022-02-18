@@ -1,9 +1,9 @@
 .divContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 28% 70%;
   margin-top: 5%;
-  gap: 2ch;
+  gap: 3ch;
 }
 
 .hisIcon {

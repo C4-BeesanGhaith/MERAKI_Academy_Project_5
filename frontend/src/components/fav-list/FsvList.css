@@ -1,19 +1,19 @@
-.delete-fav{
-    color: red;
-    transform: scale(1.3);
-    margin: auto;
-    width: 80%;
-    cursor: pointer;
+.delete-fav {
+  color: red;
+  transform: scale(1.3);
+  margin: auto;
+  width: 80%;
+  cursor: pointer;
 }
-.fav{
-    display: flex;
-    flex-flow: wrap;
-    margin-top: 4%;
-    margin-left: 10%;
+.fav {
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 4%;
+  margin-left: 10%;
 }
 
 .divFavProduct {
-    display: grid;
+  display: grid;
   grid-template-columns: auto auto auto;
   gap: 3ch;
   justify-content: center;
@@ -28,15 +28,15 @@
   padding-top: 4ch;
 }
 .favP {
-margin-left: 1ch;
+  margin-left: 1ch;
 }
-.favIcon{
-    font-size: 4ch;
-    margin-left: 2ch;
+.favIcon {
+  font-size: 4ch;
+  margin-left: 2ch;
 }
 
 .divFavPage {
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 3.2ch;
@@ -45,7 +45,7 @@ margin-left: 1ch;
 }
 
 .FavPage {
-    display: flex;
+  display: flex;
   flex-direction: row;
   text-align: left;
   margin-left: 1ch;
@@ -55,24 +55,26 @@ margin-left: 1ch;
   text-decoration: underline;
   padding-bottom: 2ch;
 }
-.msFr{
-    font-family: cursive;
+
+.msFr {
+  font-family: cursive;
 }
 
 .divFav {
-    display: flex;
+  display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 @media (max-width: 800px) {
-    .fav{
-        margin-top: 8%;
-    }
-    .proFav{
-        height: 70vh;
-        width: 30vw;
-    }
-    .favUser{
-        grid-template-columns: auto auto;
-    }
+  .fav {
+    margin-top: 8%;
+  }
+  .proFav {
+    height: 70vh;
+    width: 30vw;
+  }
+  .favUser {
+    grid-template-columns: auto auto;
+  }
 }
