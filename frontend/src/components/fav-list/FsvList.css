@@ -11,12 +11,58 @@
     margin-top: 4%;
     margin-left: 10%;
 }
+
+.divFavProduct {
+    display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 3ch;
+  justify-content: center;
+  box-shadow: 0 0 10px silver;
+  position: relative;
+  margin-right: 6ch;
+  font-family: system-ui;
+  padding-bottom: 10ch;
+  align-items: center;
+  left: 3ch;
+  right: 3ch;
+  padding-top: 4ch;
+}
+.favP {
+margin-left: 1ch;
+}
+.favIcon{
+    font-size: 4ch;
+    margin-left: 2ch;
+}
+
+.divFavPage {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+}
+
+.FavPage {
+    display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 1ch;
+  margin-top: 4ch;
+  padding-bottom: 1ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+  padding-bottom: 2ch;
+}
 .msFr{
     font-family: cursive;
 }
-.divFav{
+
+.divFav {
     display: flex;
-    flex-direction: column;
+  flex-direction: column;
+  width: 100%;
 }
 @media (max-width: 800px) {
     .fav{
