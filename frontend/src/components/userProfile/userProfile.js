@@ -4,6 +4,8 @@ import "./userProfile.css";
 import { useNavigate } from "react-router-dom";
 import FsvList from "../fav-list/FsvList";
 import axios from "axios";
+import { GiCheckMark } from "react-icons/gi";
+import {MdRemoveShoppingCart} from 'react-icons/md'
 //======================================================
 
 const UserProfile = ({ userInfo }) => {
@@ -23,45 +25,52 @@ const UserProfile = ({ userInfo }) => {
       })
       .catch((err) => {});
   };
-  const [favStatus, setFavStatus] = useState(false);
+  const [favStatus, setFavStatus] = useState(true);
   const [hisStatus, setHisStatus] = useState(false);
   const imag =
     "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-default-avatar-profile-icon-social-media-user-vector-portrait-176194876.jpg";
   const navigate = useNavigate();
+
   return (
     <>
       <div className="divContainer">
         <div className="user-cont">
-          <div className="profile">
-            <img src={imag} alt="userImg" className="userImg" />
-            <p>
-              {userInfo.firstName} {userInfo.lastName}
-            </p>
-          </div>
-          <div className="user-info">
-            <div
-              className="favorate"
-              onClick={() => {
-                setFavStatus(true);
-                setHisStatus(false);
-              }}
-            >
-              <p className="fl">My favorate list</p>
+          <div>
+            <div className="profile">
+              <img src={imag} alt="userImg" className="userImg" />
+              <p className="_name">
+                {userInfo.firstName} {userInfo.lastName}
+              </p>
             </div>
-            <div
-              className="history"
-              onClick={() => {
-                setHisStatus(true);
-                setFavStatus(false);
-              }}
-            >
+            <div className="myFav">
+              <GiCheckMark className="_check" />
               <div
-                className="mh"
+                className="favorate"
                 onClick={() => {
-                  getAllHistoryCartOfUser();
+                  setFavStatus(true);
+                  setHisStatus(false);
                 }}
               >
-                <p className="history">My Orders</p>
+                <p className="fl">My Favorate List</p>
+              </div>
+            </div>
+            <div className="myOrder">
+              <GiCheckMark className="__check" />
+              <div
+                className="history"
+                onClick={() => {
+                  setHisStatus(true);
+                  setFavStatus(false);
+                }}
+              >
+                <div
+                  className="mh"
+                  onClick={() => {
+                    getAllHistoryCartOfUser();
+                  }}
+                >
+                  <p className="history">My Orders</p>
+                </div>
               </div>
             </div>
           </div>
@@ -78,7 +87,13 @@ const UserProfile = ({ userInfo }) => {
         <div className="divHistory">
           {hisStatus ? (
             <>
-              <p>My Orders History</p>
+              <div className="divHisPage">
+                <div className="HistoryPage">
+                  <MdRemoveShoppingCart className="hisIcon"/>
+                  <h1 className="orderPa">My Orders History</h1>
+                </div>
+              </div>
+              <div className="underLine"></div>
               <div className="hist">
                 <table className="histTable">
                   <thead className="thCart">
@@ -112,7 +127,10 @@ const UserProfile = ({ userInfo }) => {
                       })
                     ) : (
                       <div>
-                        <p className="history-mass"> I don't have history order yet </p>
+                        <p className="history-mass">
+                          {" "}
+                          I don't have history order yet{" "}
+                        </p>
                       </div>
                     )}
                   </tbody>

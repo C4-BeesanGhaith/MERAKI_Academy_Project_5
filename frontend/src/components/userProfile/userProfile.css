@@ -1,19 +1,74 @@
-
 .divContainer {
-  width: 80vw;
-  height: 70vh;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin-top: 5%;
+  gap: 2ch;
 }
+
+.hisIcon {
+  font-size: 7ch;
+  margin-left: 1ch;
+}
+
+.orderPa {
+  margin-top: 1ch;
+  margin-left: 1ch;
+}
+
 .user-cont {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10%;
-  width: 22%;
-  border-right: 1px solid orange;
-  font-family: cursive;
+  display: grid;
+  grid-template-columns: auto;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px silver;
+  margin-right: 6ch;
+  font-family: system-ui;
+  padding-bottom: 10ch;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  margin-left: 2vw;
 }
+
+.myFav,
+.myOrder {
+  display: flex;
+  flex-direction: row;
+  gap: 2ch;
+  margin-left: 2ch;
+  font-size: x-large;
+}
+
+._name {
+  margin-top: 4ch;
+}
+
+.profile {
+  margin-top: 2ch;
+  display: flex;
+  flex-direction: row;
+  gap: 1ch;
+  justify-content: left;
+  margin-left: 2ch;
+  font-size: x-large;
+}
+
+.myFav {
+  margin-top: 2ch;
+}
+
+._check {
+  font-size: 3ch;
+  margin-top: 1ch;
+}
+
+.__check {
+  font-size: 3ch;
+  margin-top: 1.2ch;
+}
+
 .userImg {
-  width: 35%;
+  width: 30%;
 }
 .fl:hover {
   color: orange;
@@ -26,24 +81,53 @@
 .favorate {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin-left: 5%;
-  margin-top: -5%;
 }
+
+.divHisPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3.2ch;
+  margin-right: 3.2ch;
+  box-shadow: 0 0 10px silver;
+}
+
+.HistoryPage {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-left: 1ch;
+  margin-top: 4ch;
+  padding-bottom: 1ch;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: underline;
+  padding-bottom: 1ch;
+}
+
 .hist-cont {
   width: 90%;
 }
 .hist {
-  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 10px silver;
+  position: relative;
+  margin-right: 6ch;
+  font-family: system-ui;
+  padding-bottom: 10ch;
+  align-items: center;
+  left: 3ch;
+  right: 3ch;
+  padding-top: 2ch;
 }
 .divHistory {
   display: flex;
   flex-direction: column;
-  margin-top: 8%;
-  margin-left: 10%;
+  width: 100%;
 }
 .histTable {
-  width: 100%;
+  width: 90%;
 }
 .tdHistory td {
   font-family: monospace;
@@ -61,5 +145,5 @@
 }
 
 .history {
-  margin-top: 20%;
+  margin-top: 10%;
 }

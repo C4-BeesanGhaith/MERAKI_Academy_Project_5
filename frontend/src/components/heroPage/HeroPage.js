@@ -139,14 +139,14 @@ export default function HeroPage() {
           <div className="about" key={"about1"}>
             <div className="hero-about-img">
               <img src={momani} alt="momani" style={{ width: "61%" }} />
-              <h3> Abdullah Momani </h3>
-              <br />
-              <p className="major">Electrical Engineering</p>
-              <br />
-              <div className="divEmail">
-                <HiOutlineMailOpen className="emailIcon" />
-                <p className="about-info">abdallahz.almomani@gmail.com</p>
-              </div>
+            </div>
+            <h3> Abdullah Momani </h3>
+            <br />
+            <p className="major">Electrical Engineering</p>
+            <br />
+            <div className="divEmail">
+              <HiOutlineMailOpen className="emailIcon" />
+              <p className="about-info">abdallahz.almomani@gmail.com</p>
             </div>
             <div className="contact">
               <br />
@@ -157,17 +157,15 @@ export default function HeroPage() {
           </div>
           <div className="about" key={"about2"}>
             <div className="hero-about-img">
-              <img src={ruba} alt="ruba" style={{ width: "61%" }} />
+              <img src={ruba} alt="ruba" style={{ width: "59%" }} />
             </div>
-            <div className="">
-              <h3> Ruba Alnadi </h3>
-              <br />
-              <p className="major">Business Information Technology</p>
-              <br />
-              <div className="divEmail">
-                <HiOutlineMailOpen className="emailIcon" />
-                <p className="about-info">rubaalnadi5@gmail.com</p>
-              </div>
+            <h3> Ruba Alnadi </h3>
+            <br />
+            <p className="major">Business Information Technology</p>
+            <br />
+            <div className="divEmail">
+              <HiOutlineMailOpen className="emailIcon" />
+              <p className="about-info">rubaalnadi5@gmail.com</p>
             </div>
             <div className="contact">
               <br />
@@ -177,7 +175,9 @@ export default function HeroPage() {
             </div>
           </div>
           <div className="about" key={"about3"}>
-            <img src={bessaan} style={{ width: "60%" }} />
+            <div className="hero-about-img">
+              <img src={bessaan} style={{ width: "61%" }} />
+            </div>
             <h3> Beesan Ghaith </h3>
             <br />
             <p className="major">Computer Information System</p>
@@ -195,25 +195,25 @@ export default function HeroPage() {
           </div>
         </div>
       </div>
-      {/* <div className="hero-product"key={"hero-product"}>
-        <div className="product-contnt" key={"product-contnt"}></div>
-      </div> */}
+
+
       <div className="footer" key={"footer"}>
-        <div className="foot-content" key={"foot-content"}>
-          <div className="foot-info" key={"foot-info"}>
-            <h1> Jebnalak</h1>
+        <div className="footContent" key={"foot-content"}>
+          <div className="footInfo" key={"foot-info"}>
+            <h1>About Jebnalak:</h1>
             <br />
             <h4>
               it is a small market selling some products that people need such
-              as eggs , meat , chicken ,vegtables and fruits
+              as eggs, meat, chicken, vegtables and fruits
             </h4>
             <br />
           </div>
-          <div className="hero-email" key={"hero-email"}>
-            {/* <input className="inputEmail" type="text" placeholder="Type Your Email .." onClick={(e)=>{setSubject(e.target.value)}} />
-            <AiOutlineSend className="hero-send" onClick={sendEmail}/> */}
+          <div className="heroEmail" key={"hero-email"}>
             <form ref={form} onSubmit={sendEmail}>
-              <label className="message">Message:</label>
+
+              <label className="message">Send Feedback:</label>
+
+              
               <br />
               <textarea
                 name="message"
@@ -223,13 +223,14 @@ export default function HeroPage() {
                   setSubject(e.target.value);
                 }}
               />
+
               <input type="submit" value="Send" />
             </form>
           </div>
         </div>
-        <div className="foot-end" key={"foot-end"}>
+        <div className="footEnd" key={"foot-end"}>
           <p>Copyright &copy; 2022 spacingtech rights reserved</p>
-          <div className="foot-icon" key={"foot-icon"}>
+          <div className="footIcon" key={"foot-icon"}>
             <BsFacebook key={"face-icon"} />
             <AiOutlineInstagram key={"insta-icon"} />
             <AiOutlineMail key={"email-icon"} />

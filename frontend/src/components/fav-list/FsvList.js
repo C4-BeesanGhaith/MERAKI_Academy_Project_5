@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { GiBrokenHeart } from "react-icons/gi";
 import "./FsvList.css";
+import {GrFavorite} from "react-icons/gr"
+
+
 function FsvList({userInfo}) {
   const [fav, setFav] = useState();
   console.log(userInfo);
@@ -23,8 +26,14 @@ function FsvList({userInfo}) {
   return (
     <>
     <div className="divFav">
-      <p className="msFr"> My Favorite Product </p>
-    <div className="divProduct fav">
+    <div className="divFavPage">
+          <div className="FavPage">
+            <GrFavorite className="favIcon"/>
+            <h1 className="favP"> My Favorite Product</h1>
+          </div>
+        </div>
+        <div className="underLine"></div>
+    <div className="divFavProduct">
       {fav &&
         fav.map((wish, i) => {
           return (
