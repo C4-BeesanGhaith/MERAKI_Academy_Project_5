@@ -61,6 +61,7 @@ export default function HeroPage() {
       )
       .then(
         (result) => {
+          setSubject("");
           console.log(result.text);
         },
         (error) => {
@@ -209,9 +210,20 @@ export default function HeroPage() {
           </div>
           <div className="heroEmail" key={"hero-email"}>
             <form ref={form} onSubmit={sendEmail}>
+
               <label className="message">Send Feedback:</label>
+
+              
               <br />
-              <textarea name="message" className="textMessage" /><br/>
+              <textarea
+                name="message"
+                className="textMessage"
+                value={subject}
+                onChange={(e) => {
+                  setSubject(e.target.value);
+                }}
+              />
+
               <input type="submit" value="Send" />
             </form>
           </div>
