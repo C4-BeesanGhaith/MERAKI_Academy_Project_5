@@ -308,7 +308,7 @@ const Home = ({ userInfo, setWishList }) => {
                               <div className="productName">
                                 {product.nameProduct && product.nameProduct}{" "}
                                 <div className="price">
-                                  {product.price && product.price} JOD
+                                  {product.price && product.price} JD
                                 </div>
                               </div>
                               <div className="description">
